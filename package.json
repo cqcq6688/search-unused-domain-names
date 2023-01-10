@@ -1,0 +1,28 @@
+{
+  "name": "search-unused-domain-names",
+  "version": "1.0.0",
+  "description": "批量查询没有使用的ENS域名",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "NODE_ENV=development nodemon index.js",
+    "init": "npm run crawl:names",
+    "crawl:names": "NODE_ENV=development nodemon src/name-spider.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "lowdb": "^5.0.5",
+    "superagent": "^8.0.6",
+    "superagent-proxy": "^3.0.0"
+  },
+  "nodemonConfig": {
+    "ignore": ["**/node_modules/**", "data.json"],
+    "delay": 2500
+  }
+}
