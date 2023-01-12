@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "NODE_ENV=development nodemon index.js",
+    "start": "nodemon  -r dotenv/config index.js",
     "init": "npm run crawl:names",
-    "crawl:names": "NODE_ENV=development nodemon src/name-spider.js",
+    "crawl:names": "nodemon  -r dotenv/config src/name-spider.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,12 +17,19 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
     "lowdb": "^5.0.5",
     "superagent": "^8.0.6",
-    "superagent-proxy": "^3.0.0"
+    "superagent-proxy": "^3.0.0",
+    "tunnel": "^0.0.6",
+    "web3": "^1.8.1"
   },
   "nodemonConfig": {
-    "ignore": ["**/node_modules/**", "data.json"],
+    "ignore": [
+      "**/node_modules/**",
+      "data.json"
+    ],
     "delay": 2500
   }
 }

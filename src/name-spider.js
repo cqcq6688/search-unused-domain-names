@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
 import superagent from 'superagent'
 // import superagentProxy from 'superagent-proxy'
-// import env from '../env.js'
 import db from '../db.js'
 import * as cheerio from 'cheerio'
 
 // superagentProxy(superagent)
-// const { proxy } = env
+// const proxy = process.env.PROXY_DOMAIN
 
-const DEBUG = false
+const DEBUG = true
+// const DEBUG = false
 
 // const words = 'h' // en-name.xiao84.com存在bug，g和h开头的名字有异常，不存在g开头的站点
-const words = 'abcdefgijklmnopqrstuvwxyz'
+const words = DEBUG ? 'z' : 'abcdefgijklmnopqrstuvwxyz'
 const seedList = words.split('').map(item => `https://en-name.xiao84.com/names/fl_${item}.html`)
 const startTime = Date.now()
 

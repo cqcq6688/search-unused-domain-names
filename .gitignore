@@ -16,6 +16,7 @@ dist-ssr
 
 # local env files
 *.local
+*.env
 
 # Log files
 logs
